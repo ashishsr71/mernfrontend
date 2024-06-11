@@ -24,7 +24,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 export async function Loader(){
 const response= await axios.get("https://dummyjson.com/products/categories")
-conosle.log(response.data)
+// conosle.log(response.data)
 return response.data
 
 }
