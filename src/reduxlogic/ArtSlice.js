@@ -7,7 +7,7 @@ import axios from 'axios';
 // function to get all cartitems
 export const getCartItems= createAsyncThunk("get/cartItems",async()=>{
   const token= localStorage.getItem("user")
-   const response= await fetch(`http://localhost:3001/user/cartproducts`,{
+   const response= await fetch(`https://e-commerce-backend-2ybg.onrender.com`,{
 headers:{token}
    });
    const data= await response.json();
@@ -19,7 +19,7 @@ headers:{token}
 // fucntion to add items to cart
 export const addtocart=createAsyncThunk("add/cart",async({item})=>{
    const token=localStorage.getItem("user")
-      const response=await fetch(`http://localhost:3001/user/addincart`,{
+      const response=await fetch(`https://e-commerce-backend-2ybg.onrender.com`,{
          method:"POST",
          headers:{token},
          body:{...item}
@@ -28,7 +28,7 @@ export const addtocart=createAsyncThunk("add/cart",async({item})=>{
       return data
 });
 export const clearCart=createAsyncThunk("clear/cart",async()=>{
-   const response= axios.get(`http://localhost:3001/user/clearcart`)
+   const response= axios.get(`https://e-commerce-backend-2ybg.onrender.com`)
    return response.data;
 })
 

@@ -10,7 +10,7 @@ export const fetchUserthunk= createAsyncThunk('fetch/user',async()=>{
 
 export const loginUserthunk= createAsyncThunk('login/user',async(data)=>{
       // console.log(data)
-const response= await fetch('http://localhost:3001/user/login', {
+const response= await fetch('https://e-commerce-backend-2ybg.onrender.com', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -27,7 +27,7 @@ const output= await response.json()
 });
 
  export const addressThunk= createAsyncThunk("get/address",async()=>{
-      const response= await fetch("http://localhost:3001/user/getAddress",{headers:{token:localStorage.getItem('user')}})
+      const response= await fetch("https://e-commerce-backend-2ybg.onrender.com",{headers:{token:localStorage.getItem('user')}})
       const data= await response.json()
       if(data){
             console.log(data)
@@ -37,12 +37,12 @@ const output= await response.json()
 });
 
 export const  addAddressThunk=createAsyncThunk("add/address",async()=>{
-      const response= axios.post("http://localhost:3001/user/addressadd");
+      const response= axios.post("https://e-commerce-backend-2ybg.onrender.com");
       return response.data;
 })
 
 export const signUpthunk=createAsyncThunk("signup/user",async(data)=>{
-const response= await fetch('http://localhost:3001/user/signup',{
+const response= await fetch('https://e-commerce-backend-2ybg.onrender.com',{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

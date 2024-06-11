@@ -24,7 +24,7 @@ for(let key in pagination){
       querystring+=`?skip=${pageno*10}&limit=10`
 }
             // console.log(querystring)
-      const response= await axios(`http://localhost:3001/products${querystring}`)
+      const response= await axios(`https://e-commerce-backend-2ybg.onrender.com${querystring}`)
 return response.data;
 // }else{
 //       const response = await axios.get("https://dummyjson.com/products")
@@ -36,7 +36,7 @@ return response.data;
 
 })
 export const fetchProducts= createAsyncThunk("fetch/posts",async()=>{
-      const response = await axios.get("http://localhost:3001/products?limit=10")
+      const response = await axios.get("https://e-commerce-backend-2ybg.onrender.com?limit=10")
 console.log(response.data)
       return response.data
 
