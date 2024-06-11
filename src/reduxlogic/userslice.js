@@ -10,7 +10,7 @@ export const fetchUserthunk= createAsyncThunk('fetch/user',async()=>{
 
 export const loginUserthunk= createAsyncThunk('login/user',async(data)=>{
       // console.log(data)
-const response= await fetch('https://commerce-backend-2.onrender.com', {
+const response= await fetch('https://commerce-backend-2.onrender.com/user/login', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -42,7 +42,7 @@ export const  addAddressThunk=createAsyncThunk("add/address",async()=>{
 })
 
 export const signUpthunk=createAsyncThunk("signup/user",async(data)=>{
-const response= await fetch('https://commerce-backend-2.onrender.com',{
+const response= await fetch('https://commerce-backend-2.onrender.com/user/signup',{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

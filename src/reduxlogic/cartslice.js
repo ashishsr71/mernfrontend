@@ -36,7 +36,7 @@ return response.data;
 
 })
 export const fetchProducts= createAsyncThunk("fetch/posts",async()=>{
-      const response = await axios.get("https://commerce-backend-2.onrender.com")
+      const response = await axios.get("https://commerce-backend-2.onrender.com/products")
 console.log(response.data)
       return response.data
 
