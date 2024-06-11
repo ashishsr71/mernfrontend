@@ -24,6 +24,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 export async function Loader(){
 const response= await axios.get("https://dummyjson.com/products/categories")
+conosle.log(response.data)
 return response.data
 
 }
@@ -82,19 +83,22 @@ const itemsPerpage=10;
       id: 'category',
       name: 'Category',
       options: [
-       
+        { value: 'white', label: 'White', checked: false },
+        { value: 'beige', label: 'Beige', checked: false },
+        { value: 'blue', label: 'Blue', checked: true },
+        { value: 'brown', label: 'Brown', checked: false },
+        { value: 'green', label: 'Green', checked: false },
+        { value: 'purple', label: 'Purple', checked: false },
       ],
     },
    
   ]
   
-  for(let i=0;i<data.length;i++){
-  filters[1].options.push({value:data[i],label:data[i],checked:false})
-  }    
+    
    function Pagination(pag){
     // console.log({page})
 setPage(pag)
-   }
+   };
   function checkHandler(e,section,option){
 const newfilter= {...filter}
 if(e.target.checked){

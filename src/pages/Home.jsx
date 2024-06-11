@@ -13,7 +13,8 @@ console.log(user)
     <>
     {!user && <Navigate to='/login'/>}
     <div>  
-    <Example><Productlist></Productlist></Example></div>
+    <Example><Productlist/></Example>
+    </div>
     </>)
 }
 
