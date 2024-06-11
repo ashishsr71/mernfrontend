@@ -11,7 +11,7 @@ export const createOrderThunk= createAsyncThunk('create/order',async(data)=>{
    const token=localStorage.getItem("user")
    const headers={'Content-Type': 'application/json',token}
    console.log(data)
-   const response = await axios.post("https://e-commerce-backend-2ybg.onrender.com",data,{headers})
+   const response = await axios.post("https://commerce-backend-2.onrender.com",data,{headers})
 
    return response.data;
 });
@@ -19,7 +19,7 @@ export const createOrderThunk= createAsyncThunk('create/order',async(data)=>{
 
 
 export const getAllOrdersThunk= createAsyncThunk('get/orders',async()=>{
-      const response= await fetch('https://e-commerce-backend-2ybg.onrender.com',{
+      const response= await fetch('https://commerce-backend-2.onrender.com',{
             headers:{token:localStorage.getItem('user')}
       });
       const data= await response.json();
@@ -27,7 +27,7 @@ export const getAllOrdersThunk= createAsyncThunk('get/orders',async()=>{
 });
 
 export const updataOrderThunk= createAsyncThunk('updata/order',async(data)=>{
-    const response = await fetch('https://e-commerce-backend-2ybg.onrender.com',{
+    const response = await fetch('https://commerce-backend-2.onrender.com',{
       method:'POST',
       headers:{token:localStorage.getItem('user')},
       body:{...data}

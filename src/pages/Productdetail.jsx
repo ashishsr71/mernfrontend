@@ -11,7 +11,7 @@ export async function fetchSingleProduct({params}){
 
 // console.log(params.id)
 try{
-      const response=await axios.get(`https://e-commerce-backend-2ybg.onrender.com/${params.id}`)
+      const response=await axios.get(`https://commerce-backend-2.onrender.com/${params.id}`)
          console.log(response)
       return response.data.product;
 }catch(error){ 
